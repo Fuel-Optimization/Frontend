@@ -1,0 +1,228 @@
+.reports-container {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.generate-btn {
+  padding: 10px 20px;
+  background: #0066ff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.generate-btn:hover {
+  background: #0056d2;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+
+.mat-header-cell {
+  font-weight: bold;
+  background: #f9fafb;
+  color: #6b7280;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.mat-cell {
+  font-size: 0.9rem;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  text-align: center;
+  color: white;
+}
+
+.status-badge.excellent {
+  background: #ffeb3b;
+  color: #856404;
+}
+
+.status-badge.good {
+  background: #e3fcef;
+  color: #256029;
+}
+
+.status-badge.poor {
+  background: #f8d7da;
+  color: #842029;
+}
+
+
+.mat-paginator {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+mat-row {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+mat-row:hover {
+  background-color: #f9f9f9;
+}
+
+.actions-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  width: 25%; /* Reduced width */
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-dropdown {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  direction: ltr; /* Ensure proper alignment */
+}
+.search-bar:focus {
+  border-color: #0066ff;
+}
+
+.filter-dropdown {
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-driver-btn {
+  background: #ff5c5c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.add-driver-btn:hover {
+  background: #ff4242;
+}
+.filter-dropdown select {
+  padding-left: 8px; /* Adjust space to move the icon slightly left */
+}
+
+
+.drivers-header {
+  font-size: 1.5rem; /* Larger size for prominence */
+  font-weight: bold; /* Bold to stand out */
+  color: #333; /* Dark text for readability */
+  text-align: left; /* Align to the left */
+  padding: 10px 0; /* Add spacing for better structure */
+  margin-bottom: 20px; /* Separate it from the table */
+  border-bottom: 2px solid #0066ff; /* Add an underline accent */
+  display: inline-block; /* Keep the underline to the content's width */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dashboard-container {
+  display: flex;
+  justify-content: space-evenly; /* Ensures even spacing between cards */
+  align-items: center;
+  gap: 1px; /* Adjust to reduce the space between cards */
+  margin-bottom: 20px;
+  padding-bottom: 35px;
+}
+
+.dashboard-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 220px; /* Adjust width to fit within the reduced spacing */
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.dashboard-card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.dashboard-card .label {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.dashboard-card .value {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+
+
+.card-image {
+  width: 50px; /* Adjust the size of the image */
+  height: 50px;
+  margin-bottom: 10px;
+  object-fit: contain; /* Ensures the image fits within the dimensions */
+}

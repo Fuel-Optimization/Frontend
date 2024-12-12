@@ -1,0 +1,35 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { LayoutComponent } from './layout/layout.component';
+import { LayoutModule } from './layout/layout.module';
+import { ReportsComponent } from './features/reports/reports.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LayoutComponent,
+    ReportsComponent,
+
+  ],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule,
+    SharedModule,
+    LayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { 
+  
+
+}
