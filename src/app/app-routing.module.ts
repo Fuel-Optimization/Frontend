@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
 import { ReportsComponent } from './features/reports/reports.component';
+import { DriverProfileComponent } from './features/driver-profile/driver-profile.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,8 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'landing', pathMatch: 'full' },
       { path: 'reports', component: ReportsComponent },
+      { path: 'driver-profile/:id', component: DriverProfileComponent },
+    
       {
         path: 'landing',
         loadChildren: () =>

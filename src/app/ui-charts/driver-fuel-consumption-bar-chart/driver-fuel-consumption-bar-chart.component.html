@@ -1,0 +1,16 @@
+<div class="chart-container">
+    <h3>Fuel Consumption Overview</h3>
+    <select class="chart-filter" (change)="onChartFilterChange($event)">
+      <option value="week">Weekly</option>
+      <option value="month">Monthly</option>
+    </select>
+    <canvas
+      baseChart
+      [datasets]="barChartData.datasets"
+      [labels]="barChartData.labels"
+      [options]="barChartOptions"
+      [legend]="true"
+      chartType="bar"
+    ></canvas>
+  </div>
+  

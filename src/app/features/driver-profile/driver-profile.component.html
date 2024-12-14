@@ -1,0 +1,47 @@
+<div *ngIf="driverDetails" class="profile-container">
+    <!-- Info Section -->
+    <div class="profile-info-container">
+      <div class="profile-info-section">
+        <div class="profile-header">
+          <img src="assets/images/banner-bg-blur.jpg" alt="Profile Banner" class="profile-banner" />
+          <img
+            [src]="driverDetails.image || 'assets/images/user2.jpg'"
+            alt="Driver Avatar"
+            class="profile-avatar"
+          />
+        </div>
+        <div class="profile-info">
+          <h2 class="profile-name">{{ driverDetails.name }}</h2>
+          <p class="profile-title">Driver</p>
+          <button class="follow-button">Follow</button>
+        </div>
+        <div class="profile-stats">
+          <div class="stat-item">
+            <h3>{{ driverDetails.yearsOfExperience || 0 }}</h3>
+            <p>Experience</p>
+          </div>
+          <div class="stat-item">
+            <h3>{{ driverDetails.avgFuelConsumption || 0 }}</h3>
+            <p>Fuel Consumption</p>
+          </div>
+          <div class="stat-item">
+            <h3>{{ driverDetails.status || 'N/A' }}</h3>
+            <p>Status</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+   
+   <!-- Chart Component -->
+    <app-driver-fuel-consumption-bar-chart
+    [weeklyData]="weeklyData"
+    [monthlyData]="monthlyData"
+  ></app-driver-fuel-consumption-bar-chart>
+
+  </div>
+  
+  <div *ngIf="!driverDetails">
+    <p>Loading driver details...</p>
+  </div>
+  

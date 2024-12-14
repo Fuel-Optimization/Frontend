@@ -9,22 +9,34 @@ import { ReportsComponent } from './features/reports/reports.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
+import { DriverProfileComponent } from './features/driver-profile/driver-profile.component';
+import { NgChartsModule } from 'ng2-charts';
+import { DriverFuelConsumptionBarChartComponent } from './ui-charts/driver-fuel-consumption-bar-chart/driver-fuel-consumption-bar-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     ReportsComponent,
+    DriverProfileComponent,
+    DriverFuelConsumptionBarChartComponent,
 
   ],
   imports: [
     BrowserModule, 
     AppRoutingModule,
+    HttpClientModule,
     SharedModule,
     LayoutModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSortModule,
+    MatIconModule,
     BrowserAnimationsModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

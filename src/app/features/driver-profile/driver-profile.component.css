@@ -1,0 +1,153 @@
+/* Container styling */
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 20px auto;
+  justify-content: space-between;
+}
+
+
+
+.profile-info-container {
+  flex: 1 1 250px;
+  max-width: 500px;
+}
+
+.profile-info-section {
+  height: 450px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 250px;
+  /* Reduce minimum width for the info section */
+}
+
+.profile-header {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  /* Adjusted banner height */
+  border-radius: 12px;
+  background: #f5f5f5;
+}
+
+.profile-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.profile-avatar {
+  width: 100px;
+  /* Slightly larger avatar */
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid #ffffff;
+  object-fit: cover;
+}
+
+.profile-info {
+  margin-top: 30px;
+  /* Balanced spacing */
+  padding: 10px;
+}
+
+.profile-name {
+  margin: 10px 0 5px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.profile-title {
+  font-size: 1rem;
+  color: #666;
+}
+
+.follow-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.follow-button:hover {
+  background-color: #0056b3;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 10px;
+  border-top: 1px solid #eee;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-item h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-item p {
+  margin: 5px 0 0;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Chart Section */
+.chart-container {
+  flex: 2 1 600px;
+  /* Keeps the chart wider */
+  height: 450px;
+  /* Matches the height of the info section */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chart-container h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.chart-filter {
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 200px;
+}
+
+canvas {
+  max-height: 320px;
+  /* Adjusted canvas height */
+  width: 100%;
+}

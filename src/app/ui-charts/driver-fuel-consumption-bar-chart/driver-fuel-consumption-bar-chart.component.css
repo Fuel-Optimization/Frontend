@@ -1,0 +1,35 @@
+.chart-container {
+    flex: 4 1 auto;
+    width:800px; 
+    height: 450px; 
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  
+  .chart-container h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .chart-filter {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  canvas {
+    max-height: 320px;
+    width: 100%;
+  }
+  

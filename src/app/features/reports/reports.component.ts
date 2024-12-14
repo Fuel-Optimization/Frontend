@@ -2,11 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ApiService } from '../../core/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reports',
   templateUrl: './reports.component.html',
-  styleUrls: ['./reports.component.css'],
+  styleUrls: ['./reports.component.css']
 })
 export class ReportsComponent implements OnInit {
   totalDrivers = 0;
@@ -14,10 +16,11 @@ export class ReportsComponent implements OnInit {
   excellentDrivers = 0;
   poorDrivers = 0;
 
-
   displayedColumns: string[] = [
     'id',
     'name',
+    'email',
+    'mobile',
     'experience',
     'fuelConsumption',
     'fuelConsumptionStatus',
@@ -28,8 +31,27 @@ export class ReportsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  constructor(private apiService: ApiService,  private router: Router) {}
+
   ngOnInit() {
     this.loadDrivers();
+
+    // Custom filter for both search and experience range
+    this.dataSource.filterPredicate = (data: any, filter: string) => {
+      const [searchValue, experienceRange] = filter.split('|');
+      const searchMatch =
+        data.id.toString().toLowerCase().includes(searchValue) ||
+        data.name.toLowerCase().includes(searchValue);
+
+      if (experienceRange === 'all') return searchMatch;
+
+      const experience = parseInt(data.yearsOfExperience, 10);
+      if (experienceRange === '1-3') return searchMatch && experience >= 1 && experience <= 3;
+      if (experienceRange === '4-6') return searchMatch && experience >= 4 && experience <= 6;
+      if (experienceRange === '7+') return searchMatch && experience >= 7;
+
+      return searchMatch;
+    };
   }
 
   ngAfterViewInit() {
@@ -38,56 +60,71 @@ export class ReportsComponent implements OnInit {
   }
 
   loadDrivers() {
-    const drivers = [
-      {
-        id: 1,
-        name: { fullName: 'Alice Johnson', avatar: 'assets/images/avatar1.png' },
-        experience: '5 years',
-        fuelConsumption: '8.5 L/100km',
-        fuelConsumptionStatus: 'good',
+    this.apiService.getDrivers().subscribe(
+      (drivers) => {
+        this.dataSource.data = drivers.map(driver => ({
+          ...driver,
+          image: driver.image || 'assets/images/user2.jpg', // Default image if not provided
+          jobTitle: driver.jobTitle || 'Driver', // Placeholder job title
+        }));
+  
+        // Calculate stats
+        this.totalDrivers = drivers.length;
+        this.goodDrivers = drivers.filter((d: any) => d.status === 'good').length;
+        this.excellentDrivers = drivers.filter((d: any) => d.status === 'excellent').length;
+        this.poorDrivers = drivers.filter((d: any) => d.status === 'poor').length;
+        this.totalLength = drivers.length;
       },
-      {
-        id: 2,
-        name: { fullName: 'Jonathan Smith', avatar: 'assets/images/avatar2.png' },
-        experience: '3 years',
-        fuelConsumption: '7.2 L/100km',
-        fuelConsumptionStatus: 'excellent',
-      },
-      {
-        id: 3,
-        name: { fullName: 'Vincent Carter', avatar: 'assets/images/avatar3.png' },
-        experience: '7 years',
-        fuelConsumption: '6.8 L/100km',
-        fuelConsumptionStatus: 'excellent',
-      },
-      {
-        id: 4,
-        name: { fullName: 'Chris Evans', avatar: 'assets/images/avatar4.png' },
-        experience: '2 years',
-        fuelConsumption: '9.0 L/100km',
-        fuelConsumptionStatus: 'poor',
-      },
-      {
-        id: 5,
-        name: { fullName: 'Emma Davis', avatar: 'assets/images/avatar5.png' },
-        experience: '4 years',
-        fuelConsumption: '7.5 L/100km',
-        fuelConsumptionStatus: 'good',
-      },
-    ];
+      (error) => {
+        console.error('Error fetching drivers:', error);
+      }
+    );
+  }
+  
 
-    this.dataSource.data = drivers;
-    this.totalDrivers = drivers.length;
-    this.goodDrivers = drivers.filter(driver => driver.fuelConsumptionStatus === 'good').length;
-    this.excellentDrivers = drivers.filter(driver => driver.fuelConsumptionStatus === 'excellent').length;
-    this.poorDrivers = drivers.filter(driver => driver.fuelConsumptionStatus === 'poor').length;
-
-    
-    this.dataSource.data = drivers;
-    this.totalLength = drivers.length;
+  // Method to filter the dataSource based on search input
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.updateFilter(filterValue, this.getCurrentExperienceFilter());
   }
 
-  navigateToProfile(driverId: number) {
-    console.log(`Navigating to profile of driver with ID: ${driverId}`);
+  // Method to handle experience filter
+  filterByExperience(event: Event) {
+    const experienceValue = (event.target as HTMLSelectElement).value;
+    this.updateFilter(this.getCurrentSearchFilter(), experienceValue);
   }
+
+  // Helper to update the combined filter
+  private updateFilter(searchValue: string, experienceRange: string) {
+    this.dataSource.filter = `${searchValue}|${experienceRange}`; // Combine search and experience filters
+  }
+
+  // Helper to get the current search filter value
+  private getCurrentSearchFilter(): string {
+    return (document.querySelector('.search-bar') as HTMLInputElement)?.value.trim().toLowerCase() || '';
+  }
+
+  // Helper to get the current experience filter value
+  private getCurrentExperienceFilter(): string {
+    return (document.querySelector('.filter-dropdown') as HTMLSelectElement)?.value || 'all';
+  }
+
+
+  // Navigate to the profile of the clicked driver
+  navigateToProfile(driverId: number): void {
+    this.router.navigate([`/driver-profile/${driverId}`]);
+  }
+
+
+  // editDriver(driverId: number): void {
+  //   console.log(`Editing driver with ID: ${driverId}`);
+  //   // Add your logic to navigate to the edit page or open a modal
+  // }
+  
+  // deleteDriver(driverId: number): void {
+  //   console.log(`Deleting driver with ID: ${driverId}`);
+  //   // Add your logic to delete the driver
+  // }
+  
+  
 }
