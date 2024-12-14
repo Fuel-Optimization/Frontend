@@ -79,11 +79,13 @@
 .sidebar-item.active a {
   background: var(--hover-color);
   color: var(--primary-color); /* Blue text on hover/active */
+  cursor: pointer;
 }
 
 .sidebar-item a:hover i,
 .sidebar-item.active a i {
   color: var(--primary-color); /* Blue icon on hover/active */
+  cursor: pointer;
 }
 
 

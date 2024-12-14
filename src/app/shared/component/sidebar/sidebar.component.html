@@ -7,8 +7,8 @@
     <div class="sidebar-section">
       <h4>HOME</h4>
       <ul class="sidebar-menu">
-        <li class="sidebar-item active">
-          <a>
+        <li class="sidebar-item"  (click)="setActive('dashboard')" [class.active]="activeLink === 'dashboard'">
+          <a routerLink="/dashboard" routerLinkActive="active"   [routerLinkActiveOptions]="{ exact: true }">
             <i class="fas fa-th-large"></i>
             <span>Dashboard</span>
           </a>
@@ -16,22 +16,22 @@
       </ul>
     </div>
     <div class="sidebar-section">
-      <h4>UI COMPONENTS</h4>
+      <h4>Sections</h4>
       <ul class="sidebar-menu">
-        <li class="sidebar-item">
-          <a routerLink="/reports" routerLinkActive="active">
+        <li  class="sidebar-item" (click)="setActive('drivers')" [class.active]="activeLink === 'drivers'">
+          <a routerLink="/drivers" routerLinkActive="active"   [routerLinkActiveOptions]="{ exact: true }" (click)="navigateToDriversTable()">
             <i class="fa-solid fa-user"></i>
             <span>Drivers</span>
           </a>
         </li>        
-        <li class="sidebar-item">
-          <a routerLink="/reports" routerLinkActive="active">
+        <li class="sidebar-item" (click)="setActive('reports')" [class.active]="activeLink === 'reports'">
+          <a routerLink="/reports" routerLink="/drivers" routerLinkActive="active"   [routerLinkActiveOptions]="{ exact: true }">
             <i class="fa-solid fa-file-lines"></i>
             <span>Reports</span>
           </a>
         </li>
         <li class="sidebar-item">
-          <a>
+          <a routerLink="/alarms" routerLinkActive="active"   [routerLinkActiveOptions]="{ exact: true }">
             <i class="fa-solid fa-bell"></i>
             <span>Alarms</span>
           </a>

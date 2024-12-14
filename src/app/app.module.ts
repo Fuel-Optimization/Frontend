@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { LayoutComponent } from './layout/layout.component';
 import { LayoutModule } from './layout/layout.module';
-import { ReportsComponent } from './features/reports/reports.component';
+import { driversTableComponent } from './features/drivers/drivers-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,7 +20,7 @@ import { DriverFuelConsumptionBarChartComponent } from './ui-charts/driver-fuel-
   declarations: [
     AppComponent,
     LayoutComponent,
-    ReportsComponent,
+    driversTableComponent,
     DriverProfileComponent,
     DriverFuelConsumptionBarChartComponent,
 

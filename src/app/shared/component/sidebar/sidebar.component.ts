@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,6 +11,9 @@ export class SidebarComponent {
 
   isCollapsed = true;
 
+
+    constructor(private router: Router) {}
+
   onMenuClick(pageTitle: string) {
     this.pageSelect.emit(pageTitle);
   }
@@ -17,4 +21,18 @@ export class SidebarComponent {
   toggleSidebar(collapsed: boolean): void {
     this.isCollapsed = collapsed;
   }
+  navigateToDriversTable(){
+    this.router.navigate([`/drivers`]);
+  }
+
+  activeLink: string = 'dashboard';
+
+setActive(link: string) {
+  this.activeLink = link;
+}
+
+getCurrentRoute(): string {
+  return this.router.url;
+}
+
 }

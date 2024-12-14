@@ -1,24 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout.component';
-import { ReportsComponent } from './features/reports/reports.component';
+import { driversTableComponent } from './features/drivers/drivers-table.component';
 import { DriverProfileComponent } from './features/driver-profile/driver-profile.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'landing', pathMatch: 'full' },
-      { path: 'reports', component: ReportsComponent },
+      { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'drivers', component: driversTableComponent },
       { path: 'driver-profile/:id', component: DriverProfileComponent },
     
-      {
-        path: 'landing',
-        loadChildren: () =>
-          import('./features/landing/landing.module').then((m) => m.LandingModule),
-      },
-      // { path: 'profile/:id', component: ProfileComponent },
+      
+
     ],
   },
 ];

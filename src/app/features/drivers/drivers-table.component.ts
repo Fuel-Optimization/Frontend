@@ -6,11 +6,11 @@ import { ApiService } from '../../core/api.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-reports',
-  templateUrl: './reports.component.html',
-  styleUrls: ['./reports.component.css']
+  selector: 'app-drivers-table',
+  templateUrl: './drivers-table.component.html',
+  styleUrls: ['./drivers-table.component.css']
 })
-export class ReportsComponent implements OnInit {
+export class driversTableComponent implements OnInit {
   totalDrivers = 0;
   goodDrivers = 0;
   excellentDrivers = 0;
