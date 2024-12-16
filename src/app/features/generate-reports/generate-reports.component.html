@@ -1,0 +1,31 @@
+<div class="pdf-report-container">
+    <div class="pdf-content">
+      <h2 class="welcome-text">Generate Your PDF Report</h2>
+      <p class="description-text">
+        Download weekly or monthly performance reports in PDF format.
+      </p>
+      <div class="actions">
+        <select class="report-filter" [(ngModel)]="selectedReportType">
+          <option value="week">Weekly Report</option>
+          <option value="month">Monthly Report</option>
+        </select>
+        <button class="generate-button" (click)="generateReport()">Generate</button>
+      </div>
+      <div class="message-container">
+        <p *ngIf="loading" class="loading-text">
+          <span class="spinner"></span> Generating your report...
+        </p>
+        <p *ngIf="error" class="error-text">
+          <span>&#9888;</span> {{ error }}
+        </p>
+        <p *ngIf="success" class="success-text">
+          <span>&#10004;</span> Report generated successfully!
+        </p>
+      </div>
+      
+    </div>
+    <div class="pdf-image">
+      <img src="assets/images/pdf (1).png" alt="PDF Report" />
+    </div>
+  </div>
+  

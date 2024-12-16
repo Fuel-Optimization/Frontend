@@ -17,6 +17,9 @@ import { NgChartsModule } from 'ng2-charts';
 import { DriverFuelConsumptionBarChartComponent } from './ui-charts/driver-fuel-consumption-bar-chart/driver-fuel-consumption-bar-chart.component';
 import { DriverSummaryCardsComponent } from './cards/driver-summary-cards/driver-summary-cards.component';
 import { DashboardCardComponent } from './cards/dashboard-card/dashboard-card.component';
+import { GenerateReportsComponent } from './features/generate-reports/generate-reports.component';
+import { FormsModule } from '@angular/forms';
+import { DriverLineChartComponent } from './ui-charts/driver-line-chart/driver-line-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,8 @@ import { DashboardCardComponent } from './cards/dashboard-card/dashboard-card.co
     DriverFuelConsumptionBarChartComponent,
     DriverSummaryCardsComponent,
     DashboardCardComponent,
+    GenerateReportsComponent,
+    DriverLineChartComponent,
   
 
   ],
@@ -40,7 +45,8 @@ import { DashboardCardComponent } from './cards/dashboard-card/dashboard-card.co
     MatSortModule,
     MatIconModule,
     BrowserAnimationsModule,
-    NgChartsModule
+    NgChartsModule,
+    FormsModule
   
   ],
   providers: [],

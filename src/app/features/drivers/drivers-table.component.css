@@ -57,18 +57,21 @@
 }
 
 .status-badge.excellent {
-  background: #ffeb3b;
-  color: #856404;
+  background: #fffde7;
+  color: #c87b0089;
 }
+
+
 
 .status-badge.good {
-  background: #e3fcef;
-  color: #256029;
+  background: #cdfff698;
+  color: #28d9b3b3;
 }
 
+
 .status-badge.poor {
-  background: #f8d7da;
-  color: #842029;
+  background: #ffebee;
+  color: #ff5810e9;
 }
 
 

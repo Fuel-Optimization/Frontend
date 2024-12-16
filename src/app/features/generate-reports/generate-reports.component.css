@@ -1,0 +1,164 @@
+.pdf-report-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px 20px; /* More vertical space */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 20px auto;
+  }
+  
+  .pdf-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px; /* Spacing between text elements */
+  }
+  
+  .welcome-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Space below heading */
+  }
+  
+  .description-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px; /* Increased space below description */
+  }
+  
+  .actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px; /* Space above actions */
+  }
+  
+  .report-filter {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+  
+  .generate-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .generate-button:hover {
+    background-color: #356ac4;
+  }
+  
+  .pdf-image img {
+    width: 150px;
+    height: auto;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Message container */
+.message-container {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    padding-left: 5px; /* Align with the text padding */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  /* Loading Message */
+  .loading-text {
+    color: #007bff; /* Blue for loading */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeInOut 1.5s infinite;
+  }
+  
+  /* Error Message */
+  .error-text {
+    color: #dc3545; /* Red for errors */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  /* Success Message */
+  .success-text {
+    color: #0ec939; /* Green for success */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Loading Spinner */
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Keyframes */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

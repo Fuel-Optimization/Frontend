@@ -1,0 +1,21 @@
+<div class="chart-container">
+    <h3 class="chart-title">Driver Attribute Timeline</h3>
+    <div class="actions">
+      <select class="attribute-selector" [(ngModel)]="selectedAttribute" (change)="updateChartData()">
+        <option value="engineSpeed">Engine Speed</option>
+        <option value="vehicleSpeed">Vehicle Speed</option>
+      </select>
+    </div>
+  
+    <!-- Mixed Chart -->
+    <div class="chart-wrapper">
+        <canvas
+    baseChart
+    [datasets]="mixedChartData"
+    [labels]="mixedChartLabels"
+    [options]="mixedChartOptions"
+    chartType="line"
+  ></canvas>
+    </div>
+  </div>
+  
