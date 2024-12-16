@@ -1,4 +1,5 @@
 <div *ngIf="driverDetails" class="profile-container">
+
     <!-- Info Section -->
     <div class="profile-info-container">
       <div class="profile-info-section">
@@ -39,8 +40,11 @@
     [monthlyData]="monthlyData"
   ></app-driver-fuel-consumption-bar-chart>
 
-  </div>
   
+  </div>
+  <app-driver-summary-cards *ngIf="summaryData" [driverData]="summaryData"></app-driver-summary-cards>
+
+
   <div *ngIf="!driverDetails">
     <p>Loading driver details...</p>
   </div>

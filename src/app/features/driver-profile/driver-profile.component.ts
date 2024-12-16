@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../core/api.service';
+import { DriverSummary } from 'src/app/core/models/driver-summary';
 
 @Component({
   selector: 'app-driver-profile',
@@ -11,6 +12,7 @@ export class DriverProfileComponent implements OnInit {
   driverId!: number;
   driverDetails: any;
 
+  summaryData: DriverSummary | null = null;
   weeklyData: Array<{ averageFuelConsumption: number; weekName: string }> = [];
   monthlyData: Array<{ averageFuelConsumption: number; monthName: string }> = [];
 
@@ -19,9 +21,23 @@ export class DriverProfileComponent implements OnInit {
   ngOnInit(): void {
     this.driverId = +this.route.snapshot.paramMap.get('id')!;
     this.loadDriverDetails();
-    this.loadDriverAverages(); // Fetch weekly and monthly data
+    this.loadDriverAverages(); 
+    this.loadDriverSummary();
   }
 
+
+  loadDriverSummary(): void {
+    this.apiService.getDriverSummary(this.driverId).subscribe({
+      next: (summary) => {
+        console.log('Driver Summary Data:', summary); // Debugging
+        this.summaryData = summary; // Pass data to summaryData
+      },
+      error: (err) => {
+        console.error('Error loading driver summary:', err);
+      },
+    });
+  }
+  
   loadDriverDetails(): void {
     this.apiService.getDrivers().subscribe((drivers) => {
       this.driverDetails = drivers.find((driver) => driver.id === this.driverId);

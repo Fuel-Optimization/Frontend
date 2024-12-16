@@ -15,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DriverProfileComponent } from './features/driver-profile/driver-profile.component';
 import { NgChartsModule } from 'ng2-charts';
 import { DriverFuelConsumptionBarChartComponent } from './ui-charts/driver-fuel-consumption-bar-chart/driver-fuel-consumption-bar-chart.component';
-
+import { DriverSummaryCardsComponent } from './cards/driver-summary-cards/driver-summary-cards.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,8 @@ import { DriverFuelConsumptionBarChartComponent } from './ui-charts/driver-fuel-
     driversTableComponent,
     DriverProfileComponent,
     DriverFuelConsumptionBarChartComponent,
+    DriverSummaryCardsComponent,
+  
 
   ],
   imports: [
@@ -36,7 +38,8 @@ import { DriverFuelConsumptionBarChartComponent } from './ui-charts/driver-fuel-
     MatSortModule,
     MatIconModule,
     BrowserAnimationsModule,
-    NgChartsModule,
+    NgChartsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

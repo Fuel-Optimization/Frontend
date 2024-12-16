@@ -1,8 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Driver } from './models/driver.model';
 import { DriverAverage } from './models/driver-average.model';
+
+
+
+export interface DriverSummary {
+  predictedFuelConsumption: number;
+  averageSpeed: number;
+  maxSpeed: number;
+  engineEfficiency: number;
+}
+
 
 @Injectable({
   providedIn: 'root',
@@ -29,4 +39,13 @@ export class ApiService {
       params: { driverId: driverId.toString() },
     });
   }
+
+  
+  getDriverSummary(driverId: number): Observable<DriverSummary> {
+    const url = `${this.baseUrl}/summary`;
+    return this.http.get<DriverSummary>(url, {
+      params: { driverId: driverId.toString() },
+    });
+  }
+  
 }

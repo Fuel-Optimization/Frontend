@@ -22,7 +22,7 @@ export class DriverFuelConsumptionBarChartComponent implements OnInit {
       {
         data: [], // Initialize as an empty number array
         label: 'Fuel Consumption (L/100km)',
-        backgroundColor: '#42A5F5',
+        backgroundColor: '#B2D1FF',
       },
     ],
   };
@@ -81,8 +81,8 @@ export class DriverFuelConsumptionBarChartComponent implements OnInit {
     },
     elements: {
       bar: {
-        backgroundColor: '#42A5F5',
-        borderRadius: 8,
+        backgroundColor:'#ffffff',
+        borderRadius: 10,
         borderSkipped: false,
       },
     },

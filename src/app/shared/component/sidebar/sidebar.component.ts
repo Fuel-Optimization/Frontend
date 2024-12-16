@@ -25,14 +25,11 @@ export class SidebarComponent {
     this.router.navigate([`/drivers`]);
   }
 
-  activeLink: string = 'dashboard';
+  activeLink: string = '';
 
-setActive(link: string) {
-  this.activeLink = link;
-}
+  setActive(link: string) {
+    this.activeLink = link;
+  }
 
-getCurrentRoute(): string {
-  return this.router.url;
-}
 
 }

@@ -14,7 +14,6 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'drivers', component: driversTableComponent },
       { path: 'driver-profile/:id', component: DriverProfileComponent },
-    
       
 
     ],

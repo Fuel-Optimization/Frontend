@@ -1,0 +1,84 @@
+.summary-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between; /* Evenly spaced cards */
+}
+
+.summary-card {
+  flex: 1 1 calc(33.33% - 20px); /* Each card occupies one-third of the row */
+  max-width: 33.33%; /* Fix width to match proportions */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  height: 200px; /* Adjust height for proportional appearance */
+  color: #fff; /* White font color for contrast on gradient background */
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(255, 255, 255, 0.15);
+}
+
+/* Gradient background for specific cards */
+.fuel-consumption {
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue gradient */
+}
+
+.vehicle-speed {
+  background: linear-gradient(135deg, #7460ee, #5947ce); /* Orange to red gradient */
+}
+
+.engine-efficiency {
+  background: linear-gradient(135deg, #43ced7, #75f6ff); /* Green gradients */
+}
+
+/* Content styling */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icon styling */
+.card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-icon i {
+  font-size: 1.8rem; /* Adjust icon size */
+  color: #fff;
+}
+
+/* Card details */
+.card-details p {
+  font-size: 1rem;
+  font-weight: 600; /* Medium weight for labels */
+  margin: 0;
+}
+
+.card-details span {
+  font-size: 0.9rem;
+  font-weight: 500; /* Light-medium for smaller text */
+  margin-top: 5px;
+}
+
+.card-details h2 {
+  font-size: 2rem;
+  font-weight: 700; /* Bold font for key numbers */
+  margin-top: 10px;
+}

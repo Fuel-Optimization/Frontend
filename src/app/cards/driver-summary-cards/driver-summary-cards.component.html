@@ -1,0 +1,44 @@
+<div class="summary-cards-row">
+  <!-- Card 1: Predicted Fuel Consumption -->
+  <div class="summary-card fuel-consumption">
+    <div class="card-content">
+      <div class="card-icon">
+        <i class="fas fa-gas-pump"></i>
+      </div>
+      <div class="card-details">
+        <p>Predicted Fuel Consumption</p>
+        <span>Average</span>
+        <h2>{{ predictedFuelConsumption }} L/100km</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2: Vehicle Speed -->
+  <div class="summary-card vehicle-speed">
+    <div class="card-content">
+      <div class="card-icon">
+        <i class="fas fa-tachometer-alt"></i>
+      </div>
+      <div class="card-details">
+        <p>Vehicle Speed</p>
+        
+        <h2>{{ averageSpeed }} km/h</h2>
+        <p>Max: {{ maxSpeed }} km/h</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3: Engine Efficiency -->
+  <div class="summary-card engine-efficiency">
+    <div class="card-content">
+      <div class="card-icon">
+        <i class="fas fa-cogs"></i>
+      </div>
+      <div class="card-details">
+        <p>Engine Efficiency</p>
+        <span>Overall Score</span>
+        <h2>{{ engineEfficiency }}%</h2>
+      </div>
+    </div>
+  </div>
+</div>
