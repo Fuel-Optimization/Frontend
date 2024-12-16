@@ -1,25 +1,22 @@
-<div class="dashboard-container">
-  <div class="dashboard-card" style="background-color: #9dccfc2f; color: #0066ffb6;">
-    <img src="assets/images/multiple-users-silhouette (1).png" alt="Total Drivers" class="card-image" />
-    <div class="label">Total Drivers</div>
-    <div class="value">{{ totalDrivers }}</div>
-  </div>
-  <div class="dashboard-card" style="background-color: #fffde7; color: #f9a82589;">
-    <img src="assets/images/star.png" alt="Excellent Drivers" class="card-image" />
-    <div class="label">Excellent Drivers</div>
-    <div class="value">{{ excellentDrivers }}</div>
-  </div>
-  <div class="dashboard-card" style="background-color: #cdfff698; color: #28d9b3b3;">
-    <img src="assets/images/like (1).png" alt="Good Drivers" class="card-image" />
-    <div class="label">Good Drivers</div>
-    <div class="value">{{ goodDrivers }}</div>
-  </div>
-  <div class="dashboard-card" style="background-color: #ffebee; color: #ff5810e9;">
-    <img src="assets/images/error.png" alt="Poor Drivers" class="card-image" />
-    <div class="label">Poor Drivers</div>
-    <div class="value">{{ poorDrivers }}</div>
-  </div>
+<div class="card-container">
+  <app-dashboard-card backgroundColor="#9dccfc2f" textColor="#0066ffb6"
+    image="assets/images/multiple-users-silhouette (1).png" altText="Total Drivers" label="Total Drivers"
+    [value]="totalDrivers">
+  </app-dashboard-card>
+
+  <app-dashboard-card backgroundColor="#fffde7" textColor="#f9a82589" image="assets/images/star.png"
+    altText="Excellent Drivers" label="Excellent Drivers" [value]="excellentDrivers">
+  </app-dashboard-card>
+
+  <app-dashboard-card backgroundColor="#cdfff698" textColor="#28d9b3b3" image="assets/images/like (1).png"
+    altText="Good Drivers" label="Good Drivers" [value]="goodDrivers">
+  </app-dashboard-card>
+
+  <app-dashboard-card backgroundColor="#ffebee" textColor="#ff5810e9" image="assets/images/error.png"
+    altText="Poor Drivers" label="Poor Drivers" [value]="poorDrivers">
+  </app-dashboard-card>
 </div>
+
 
 
 
@@ -107,7 +104,7 @@
         </button>
       </td>
     </ng-container> -->
-      
+
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="navigateToProfile(row.id)"

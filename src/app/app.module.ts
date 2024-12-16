@@ -16,6 +16,7 @@ import { DriverProfileComponent } from './features/driver-profile/driver-profile
 import { NgChartsModule } from 'ng2-charts';
 import { DriverFuelConsumptionBarChartComponent } from './ui-charts/driver-fuel-consumption-bar-chart/driver-fuel-consumption-bar-chart.component';
 import { DriverSummaryCardsComponent } from './cards/driver-summary-cards/driver-summary-cards.component';
+import { DashboardCardComponent } from './cards/dashboard-card/dashboard-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { DriverSummaryCardsComponent } from './cards/driver-summary-cards/driver
     DriverProfileComponent,
     DriverFuelConsumptionBarChartComponent,
     DriverSummaryCardsComponent,
+    DashboardCardComponent,
   
 
   ],

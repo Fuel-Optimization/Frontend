@@ -248,85 +248,29 @@ mat-row:hover {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.dashboard-container {
+ .card-container {
   display: flex;
   justify-content: space-evenly; /* Ensures even spacing between cards */
   align-items: center;
   gap: 1px; /* Adjust to reduce the space between cards */
-  margin-bottom: 20px;
-  padding-bottom: 35px;
-}
-
-.dashboard-card {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  width: 220px; /* Adjust width to fit within the reduced spacing */
-  height: 160px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-sizing: border-box;
-}
-
-.dashboard-card .icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.dashboard-card .label {
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
-.dashboard-card .value {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.dashboard-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+  margin-bottom: 30px;
 }
 
 
 
-.card-image {
-  width: 50px; /* Adjust the size of the image */
-  height: 50px;
-  margin-bottom: 10px;
-  object-fit: contain; /* Ensures the image fits within the dimensions */
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
